@@ -1,0 +1,7 @@
+EVTOL mission assignments based on last initial
+
+A-F: Archer_Maker
+G-K: Beta_Alia
+L-P: Joby_5seater
+S-V: KH_Heaviside
+W-Z: Lilium_Jet

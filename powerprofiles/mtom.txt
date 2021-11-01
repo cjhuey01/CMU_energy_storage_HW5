@@ -1,0 +1,9 @@
+MTOM — Max Takeoff Mass:
+
+KH_Heaviside: 395 kg,
+Joby_5seater: 2,180kg,
+Lilium_jet: 3,175kg,
+Beta_Alia: 2,730kg,
+Archer_Maker: 1,508kg
+
+Aircraft weight without payload or batteries is 0.4*MTOM
