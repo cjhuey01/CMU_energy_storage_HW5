@@ -140,74 +140,6 @@ def nmc_LGM50_electrolyte_exchange_current_density_Chen2020(c_e, c_s_surf, T):
     )
 
 
-def graphite_LGM50_ocp_Chen2020(sto):
-    """
-    LG M50 graphite open circuit potential as a function of stochiometry, fit taken
-    from [1].
-
-    References
-    ----------
-    .. [1] Chang-Hui Chen, Ferran Brosa Planella, Kieran O’Regan, Dominika Gastol, W.
-    Dhammika Widanage, and Emma Kendrick. "Development of Experimental Techniques for
-    Parameterization of Multi-scale Lithium-ion Battery Models." Journal of the
-    Electrochemical Society 167 (2020): 080534.
-
-    Parameters
-    ----------
-    sto: :class:`pybamm.Symbol`
-        Electrode stochiometry
-
-    Returns
-    -------
-    :class:`pybamm.Symbol`
-        Open circuit potential
-    """
-
-    u_eq = (
-        1.9793 * exp(-39.3631 * sto)
-        + 0.2482
-        - 0.0909 * tanh(29.8538 * (sto - 0.1234))
-        - 0.04478 * tanh(14.9159 * (sto - 0.2769))
-        - 0.0205 * tanh(30.4444 * (sto - 0.6103))
-    )
-
-    return u_eq
-
-
-def nmc_LGM50_ocp_Chen2020(sto):
-    """
-    LG M50 NMC open circuit potential as a function of stochiometry, fit taken
-    from [1].
-
-    References
-    ----------
-    .. [1] Chang-Hui Chen, Ferran Brosa Planella, Kieran O’Regan, Dominika Gastol, W.
-    Dhammika Widanage, and Emma Kendrick. "Development of Experimental Techniques for
-    Parameterization of Multi-scale Lithium-ion Battery Models." Journal of the
-    Electrochemical Society 167 (2020): 080534.
-
-    Parameters
-    ----------
-    sto: :class:`pybamm.Symbol`
-        Electrode stochiometry
-
-    Returns
-    -------
-    :class:`pybamm.Symbol`
-        Open circuit potential
-    """
-
-    u_eq = (
-        -0.8090 * sto
-        + 4.4875
-        - 0.0428 * tanh(18.5138 * (sto - 0.5542))
-        - 17.7326 * tanh(15.7890 * (sto - 0.3117))
-        + 17.5842 * tanh(15.9308 * (sto - 0.3120))
-    )
-
-    return u_eq
-
-
 def get_parameter_values():
     return ParameterValues(
         {
@@ -228,7 +160,6 @@ def get_parameter_values():
             "Maximum concentration in positive electrode [mol.m-3]": 63104.0,
             "Negative electrode Bruggeman coefficient (electrode)": 1.5,
             "Negative electrode Bruggeman coefficient (electrolyte)": 1.5,
-            "Negative electrode OCP [V]": graphite_LGM50_ocp_Chen2020,
             "Negative electrode OCP entropic change [V.K-1]": 0.0,
             "Negative electrode active material volume fraction": 0.75,
             "Negative electrode conductivity [S.m-1]": 215.0,
@@ -243,7 +174,6 @@ def get_parameter_values():
             "Number of electrodes connected in parallel to make a cell": 1.0,
             "Positive electrode Bruggeman coefficient (electrode)": 1.5,
             "Positive electrode Bruggeman coefficient (electrolyte)": 1.5,
-            "Positive electrode OCP [V]": nmc_LGM50_ocp_Chen2020,
             "Positive electrode OCP entropic change [V.K-1]": 0.0,
             "Positive electrode active material volume fraction": 0.665,
             "Positive electrode conductivity [S.m-1]": 0.18,
