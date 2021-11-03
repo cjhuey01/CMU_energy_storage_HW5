@@ -15,6 +15,6 @@ This repository contains the following files and folders:
     - `mission_assignments.txt`: which mission you should use (assigned by last name)
 
 - `HW5.pdf`: the problem set
-- `HW5_template.ipynb`: a template to help you get started (in progress)
+- `HW5_template.ipynb`: a template to help you get started
 
 Materials to help with learning PyBaMM are available at [pybamm.org](https://www.pybamm.org/training)
