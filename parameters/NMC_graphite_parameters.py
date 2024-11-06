@@ -143,7 +143,7 @@ def nmc_LGM50_electrolyte_exchange_current_density_Chen2020(c_e, c_s_surf, T):
 def get_parameter_values():
     return ParameterValues(
         {
-            "1 + dlnf/dlnc": 1.0,
+            "Thermodynamic factor": 1.0,
             "Ambient temperature [K]": 298.15,
             "Cation transference number": 0.2594,
             "Current function [A]": 5.0,
